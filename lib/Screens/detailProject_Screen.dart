@@ -28,6 +28,16 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
     double discount = (widget.items!['price'] * 10) / 100;
     double totalDiscount = widget.items!['price'] - discount;
 
+    //select colour
+    List selectColor = [
+      "Green",
+      "Black",
+      "Silver",
+      "Blue",
+    ];
+
+    String selectedColor = "";
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -103,7 +113,7 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 300.0,
+              height: 290.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
@@ -219,7 +229,11 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                   (index) {
                     var menuitem = menu[index];
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        selected = index;
+
+                        setState(() {});
+                      },
                       child: Container(
                         height: 100.0,
                         width: MediaQuery.of(context).size.width / 2,
@@ -269,7 +283,7 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 22.0,
                         ),
                         SizedBox(
@@ -281,24 +295,154 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                           width: MediaQuery.of(context).size.width,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
+                            children: [
+                              const Text(
                                 "Color",
                                 style: TextStyle(
                                     fontSize: 12, fontWeight: FontWeight.w500),
                               ),
+                              const SizedBox(
+                                height: 1.0,
+                              ),
+                              SizedBox(
+                                height: 35.0,
+                                child: ListView.builder(
+                                  itemCount: selectColor.length,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    var itemColor = selectColor[index];
+                                    return Container(
+                                      width: 66.0,
+                                      height: 36,
+                                      padding: const EdgeInsets.all(10.0),
+                                      margin: const EdgeInsets.only(right: 5.0),
+                                      decoration: BoxDecoration(
+                                        borderRadius: const BorderRadius.all(
+                                          Radius.circular(8.0),
+                                        ),
+                                        border: Border.all(
+                                          width: 1.0,
+                                          color: const Color(0xffC0C8C7),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          "$itemColor",
+                                          style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 11.0,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              )
                             ],
                           ),
                         )
                       ],
                     ),
                   ),
+
+                  //second container
+                  Container(
+                    child: Column(
+                      children: [
+                        ListView.builder(
+                          itemCount: 3,
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            var item = {};
+                            return Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: NetworkImage(
+                                    "https://i.ibb.co/PGv8ZzG/me.jpg",
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 13.0,
+                                ),
+                                Container(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Arnold Cuan",
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                      const SizedBox(
+                                        height: 8.0,
+                                      ),
+                                      Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.star,
+                                            size: 14.0,
+                                            color: Colors.orange,
+                                          ),
+                                          Icon(
+                                            Icons.star,
+                                            size: 14.0,
+                                            color: Colors.orange,
+                                          ),
+                                          Icon(
+                                            Icons.star,
+                                            size: 14.0,
+                                            color: Colors.orange,
+                                          ),
+                                          Icon(
+                                            Icons.star,
+                                            size: 14.0,
+                                            color: Colors.orange,
+                                          ),
+                                          Icon(
+                                            Icons.star,
+                                            size: 14.0,
+                                            color: Colors.orange,
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 8.0,
+                                      ),
+                                      const SizedBox(
+                                        height: 32,
+                                        width: 288,
+                                        child: Expanded(
+                                          child: Text(
+                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w200),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             )
           ],
         ),
       ),
+      bottomNavigationBar: Container(),
     );
   }
 }
