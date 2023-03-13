@@ -47,7 +47,8 @@ class _Registration_screenState extends State<Registration_screen> {
                               Text(
                                 "Register",
                                 style: TextStyle(
-                                    fontSize: 28,
+                                    fontSize: 20,
+                                    fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600),
                               ),
@@ -55,7 +56,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                 height: 10.0,
                               ),
                               Text(
-                                "Enter your personal details to create your acount",
+                                "Enter your personal details to create your account",
                                 style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.white,
@@ -89,6 +90,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                 decoration: const InputDecoration(
                                   labelText: 'Full Name',
                                   labelStyle: TextStyle(
+                                      fontFamily: 'Poppins',
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal),
                                   enabledBorder: UnderlineInputBorder(
@@ -109,6 +111,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                 decoration: const InputDecoration(
                                   labelText: 'Email Address',
                                   labelStyle: TextStyle(
+                                      fontFamily: 'Poppins',
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal),
                                   enabledBorder: UnderlineInputBorder(
@@ -128,6 +131,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                 decoration: const InputDecoration(
                                   labelText: 'Phone Number',
                                   labelStyle: TextStyle(
+                                      fontFamily: 'Poppins',
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal),
                                   enabledBorder: UnderlineInputBorder(
@@ -148,6 +152,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                 decoration: const InputDecoration(
                                   labelText: 'Password',
                                   labelStyle: TextStyle(
+                                      fontFamily: 'Poppins',
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal),
                                   enabledBorder: UnderlineInputBorder(
@@ -168,6 +173,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                 decoration: const InputDecoration(
                                   labelText: 'Confirm Password',
                                   labelStyle: TextStyle(
+                                      fontFamily: 'Poppins',
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal),
                                   enabledBorder: UnderlineInputBorder(
@@ -203,6 +209,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                 child: const Text(
                                   "Sign Up",
                                   style: TextStyle(
+                                      fontFamily: 'Poppins',
                                       fontSize: 12,
                                       fontWeight: FontWeight.w600),
                                 ),
@@ -225,6 +232,7 @@ class _Registration_screenState extends State<Registration_screen> {
                                     "Have an account?",
                                     style: TextStyle(
                                         fontSize: 13,
+                                        fontFamily: 'Poppins',
                                         fontWeight: FontWeight.normal),
                                   ),
                                   InkWell(
@@ -232,8 +240,9 @@ class _Registration_screenState extends State<Registration_screen> {
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) =>
-                                                const welcomeScreen()),
+                                          builder: (context) =>
+                                              const welcomeScreen(),
+                                        ),
                                       );
                                     },
                                     child: const Text(

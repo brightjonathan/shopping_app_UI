@@ -48,6 +48,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                   Text(
                                     "Welcome",
                                     style: TextStyle(
+                                        fontFamily: 'Poppins',
                                         fontSize: 28,
                                         fontWeight: FontWeight.w600,
                                         color: Colors.white),
@@ -56,6 +57,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                     "Sign in to Continue",
                                     style: TextStyle(
                                         fontSize: 12,
+                                        fontFamily: 'Poppins',
                                         fontWeight: FontWeight.normal,
                                         color: Colors.white),
                                   ),
@@ -94,6 +96,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                   labelText: 'Your Email Address',
                                   labelStyle: TextStyle(
                                     fontSize: 12,
+                                    fontFamily: 'Poppins',
                                     fontWeight: FontWeight.normal,
                                     color: Color(0xff8B9E9E),
                                   ),
@@ -116,6 +119,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                   labelText: 'Password',
                                   labelStyle: TextStyle(
                                     fontSize: 12,
+                                    fontFamily: 'Poppins',
                                     fontWeight: FontWeight.normal,
                                     color: Color(0xff8B9E9E),
                                   ),
@@ -152,6 +156,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                     "Remember me",
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.normal,
                                       color: Color(0xff899B9A),
                                     ),
@@ -161,6 +166,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                     "Forgot Password?",
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.normal,
                                       color: Color(0xffFF8933),
                                     ),
@@ -187,6 +193,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                   "Sign In",
                                   style: TextStyle(
                                       fontSize: 14,
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w600,
                                       color: Colors.white),
                                 ),
@@ -207,6 +214,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                       "Don’t have an account?",
                                       style: TextStyle(
                                           fontSize: 13,
+                                          fontFamily: 'Poppins',
                                           fontWeight: FontWeight.normal,
                                           color: Colors.black),
                                     ),
@@ -224,6 +232,7 @@ class _welcomeScreenState extends State<welcomeScreen> {
                                         " Sign Up",
                                         style: TextStyle(
                                           fontSize: 13,
+                                          fontFamily: 'Poppins',
                                           fontWeight: FontWeight.normal,
                                           color: Color(0xffFF8933),
                                         ),
