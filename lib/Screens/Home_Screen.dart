@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Services/service_grocery.dart';
-import '../Screens/detailProject_Screen.dart';
+import '../Screens/details.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,7 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         title: const Text(
           "Home",
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+          style: TextStyle(
+              fontFamily: 'Poppins', fontWeight: FontWeight.w600, fontSize: 20),
         ),
         actions: [
           const Icon(
@@ -118,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
                               fontSize: 13,
+                              fontFamily: 'Poppins',
                               color: Colors.white,
                             ),
                           ),
@@ -158,6 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 hoverColor: Colors.transparent,
                                 hintText: "search product here...",
                                 hintStyle: TextStyle(
+                                  fontFamily: 'Poppins',
                                   fontWeight: FontWeight.normal,
                                   fontSize: 13,
                                   color: Color(0xff5F6E7C),
@@ -217,6 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       "${item['name']}", //mapping the item name
                                       style: const TextStyle(
+                                        fontFamily: 'Poppins',
                                         fontWeight: FontWeight.normal,
                                         fontSize: 13,
                                       ),
@@ -275,6 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
+                              fontFamily: 'Poppins',
                             ),
                           ),
                           Spacer(),
@@ -282,6 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             "See All",
                             style: TextStyle(
                               fontSize: 13,
+                              fontFamily: 'Poppins',
                               fontWeight: FontWeight.w600,
                               color: Color(0xff1CB069),
                             ),
@@ -308,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           var item = GroceryServices.products[index];
 
                           //A random calculation to get Total discount
-                          double discount = (item['price'] * 10) / 100;
+                          double discount = (item['price'] * 20) / 5;
                           double totalDiscount = item['price'] - discount;
                           return InkWell(
                             onTap: () {
@@ -316,8 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      DetailProject_screen(items: item),
+                                  builder: (context) => Details(items: item),
                                 ),
                               );
                             },

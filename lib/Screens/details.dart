@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../Screens/cardScreenView.dart';
 
-class DetailProject_screen extends StatefulWidget {
+class Details extends StatefulWidget {
   Map? items;
-  DetailProject_screen({this.items, Key? key}) : super(key: key);
+  Details({this.items});
 
   @override
-  State<DetailProject_screen> createState() => _DetailProject_screenState();
+  State<Details> createState() => _DetailsState();
 }
 
-class _DetailProject_screenState extends State<DetailProject_screen> {
+class _DetailsState extends State<Details> {
   var selected = 0;
-  // Map item = {
-  //   "photo": "assets/product/product_1.jpg",
-  //   "product_name": "Frenzy Pizza",
-  //   "price": 25,
-  //   "category": "Food",
-  //   "description":
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  // };
+  int countItem = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +20,7 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
     var menu = ["Details", "Review"];
 
     //A random calculation to get Total discount
-    double discount = (widget.items!['price'] * 10) / 100;
+    double discount = (widget.items!['price'] * 10) / 10;
     double totalDiscount = widget.items!['price'] - discount;
 
     //select colour
@@ -42,7 +37,7 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xff06AB8D),
-        title: const Text("Dashboard"),
+        title: const Text("Dashboard "),
         actions: [
           const Icon(
             Icons.message_outlined,
@@ -132,8 +127,10 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
               ),
               child: Text(
                 "${widget.items!['product_name']}",
-                style:
-                    const TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                style: const TextStyle(
+                    fontSize: 22,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500),
               ),
             ),
             Row(
@@ -160,7 +157,9 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                 Text(
                   "${widget.items!['category']}",
                   style: const TextStyle(
-                      fontSize: 11, fontWeight: FontWeight.bold),
+                      fontSize: 11,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   width: 11.0,
@@ -190,7 +189,7 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                     Icon(
                       Icons.star,
                       size: 15.0,
-                      color: Colors.orange,
+                      color: Colors.grey,
                     ),
                     SizedBox(
                       width: 6.0,
@@ -203,14 +202,16 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                   ],
                 ),
                 const Spacer(),
-                Text(
-                  "₦${widget.items!['price']}",
-                  style: const TextStyle(
-                      fontSize: 10,
-                      color: Color(0xffF25822),
-                      fontWeight: FontWeight.normal,
-                      decoration: TextDecoration.lineThrough),
-                ),
+                // Text(
+                //   "₦${widget.items!['price']}",
+                //   style: const TextStyle(
+                //     fontSize: 10,
+                //     fontFamily: 'Poppins',
+                //     color: Color(0xffF25822),
+                //     fontWeight: FontWeight.normal,
+                //     decoration: TextDecoration.lineThrough,
+                //   ),
+                // ),
                 const SizedBox(
                   width: 28.0,
                 ),
@@ -247,7 +248,9 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                             Text(
                               menuitem,
                               style: const TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 12),
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'Poppins',
+                                  fontSize: 12),
                             ),
                             const Spacer(),
                             (selected == index)
@@ -375,6 +378,7 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                                         "Arnold Cuan",
                                         style: TextStyle(
                                             fontSize: 12,
+                                            fontFamily: 'Poppins',
                                             fontWeight: FontWeight.w400),
                                       ),
                                       const SizedBox(
@@ -400,12 +404,12 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                                           Icon(
                                             Icons.star,
                                             size: 14.0,
-                                            color: Colors.orange,
+                                            color: Colors.grey,
                                           ),
                                           Icon(
                                             Icons.star,
                                             size: 14.0,
-                                            color: Colors.orange,
+                                            color: Colors.grey,
                                           ),
                                         ],
                                       ),
@@ -417,7 +421,7 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
                                         width: 288,
                                         child: Expanded(
                                           child: Text(
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                                            "I just wanted to express my gratitude towards your great team of people that you have working there. Great job, and excellent service.",
                                             maxLines: 2,
                                             overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
@@ -442,7 +446,114 @@ class _DetailProject_screenState extends State<DetailProject_screen> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(),
+      bottomNavigationBar: Container(
+        height: 93.85,
+        margin: const EdgeInsets.symmetric(horizontal: 24.0),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        child: Row(
+          children: [
+            Container(
+              height: 27.0,
+              width: 88,
+              decoration: const BoxDecoration(),
+              child: Row(
+                children: [
+                  Container(
+                    width: 27.51,
+                    height: 27.51,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(
+                          9.0,
+                        ),
+                      ),
+                      border: Border.all(
+                        width: 1.0,
+                        color: const Color(0xffC0C8C7),
+                      ),
+                    ),
+                    child: FloatingActionButton(
+                      heroTag: "btn1",
+                      elevation: 0,
+                      onPressed: () {
+                        setState(() {
+                          countItem--;
+                        });
+                      },
+                      backgroundColor: Colors.white,
+                      child: const Icon(FontAwesomeIcons.minus,
+                          color: Colors.black, size: 10),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 27.51,
+                    height: 27.51,
+                    child: Center(
+                      child: Text(
+                        countItem.toString(),
+                        style: const TextStyle(fontSize: 12),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 27.51,
+                    height: 27.51,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(
+                          9.0,
+                        ),
+                      ),
+                      border: Border.all(
+                        width: 1.0,
+                        color: const Color(0xffC0C8C7),
+                      ),
+                    ),
+                    child: FloatingActionButton(
+                      heroTag: "btn2",
+                      elevation: 0,
+                      onPressed: () {
+                        setState(() {
+                          countItem++;
+                        });
+                      },
+                      backgroundColor: Colors.white,
+                      child: const Icon(FontAwesomeIcons.plus,
+                          color: Colors.black, size: 10),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Spacer(),
+            SizedBox(
+              width: 185.29,
+              height: 50,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xffFFB039),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(62), // <-- Radius
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const cardScreenView(),
+                    ),
+                  );
+                },
+                child: const Text("Add to cart"),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
